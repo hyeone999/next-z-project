@@ -1,5 +1,5 @@
 import SignupModal from "@/src/app/(beforeLogin)/_component/SignupModal"
 
-export default function SignupPage() {
+export default function Page() {
   return <SignupModal />
 }
