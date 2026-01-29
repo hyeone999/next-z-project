@@ -6,7 +6,6 @@ interface Props {
 export default function Layout({children, modal} :Props) {
   return (
     <div>
-        before layout
         {children}
         {modal}
     </div>

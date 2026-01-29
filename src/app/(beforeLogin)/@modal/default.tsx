@@ -1,5 +1,3 @@
-export default function Page() {
-  return (
-    <div>Parallel Modal</div>
-  )
+export default function Default() {
+  return null
 }
