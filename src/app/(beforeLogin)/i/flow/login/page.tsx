@@ -1,5 +1,7 @@
 export default function LoginPage() {
   return (
-    <div>Login</div>
+    <main>
+      로그인 모달
+    </main>
   )
 }
