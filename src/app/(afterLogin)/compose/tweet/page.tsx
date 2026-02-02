@@ -1,3 +1,7 @@
+import HomePage from "../../home/page";
+
 export default function TweetPage() {
-  return <div>Tweet</div>
+  return (
+    <HomePage />
+  )
 }
