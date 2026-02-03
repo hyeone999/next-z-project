@@ -4,6 +4,7 @@ import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import 'dayjs/locale/ko';
 import ActionButtons from './ActionButtons';
+import PostArticle from './PostArticle';
 
 dayjs.locale('ko');
 dayjs.extend(relativeTime)
@@ -15,11 +16,11 @@ export default function Post({ noImage }: Props) {
   const target = {
     postId: 1,
     User: {
-      id: 'elonmusk',
-      nickname: 'Elon Musk',
+      id: 'test',
+      nickname: 'test',
       image: '/android.jpeg',
     },
-    content: '클론코딩 라이브로 하니 너무 힘들어요 ㅠㅠ',
+    content: '테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다.',
     createdAt: new Date(),
     Images: [] as string[],
   }
@@ -33,16 +34,16 @@ export default function Post({ noImage }: Props) {
 //   }
 
   return (
-    <article className={style.post}>
-        <div className={style.postWrapper}>
-        <div className={style.postUserSection}>
-            <Link href={`/${target.User.id}`} className={style.postUserImage}>
-          <img src={target.User.image} alt={target.User.nickname}/>
-            <div className={style.postShade}/>
-            </Link>
-          </div>
+  <PostArticle post={target}>
+    <div className={style.postWrapper}>
+      <div className={style.postUserSection}>
+        <Link href={`/${target.User.id}`} className={style.postUserImage}>
+        <img src={target.User.image} alt={target.User.nickname}/>
+        <div className={style.postShade}/>
+        </Link>
+        </div>
         <div className={style.postBody}>
-            <div className={style.postMeta}>
+          <div className={style.postMeta}>
             <Link href={`/${target.User.id}`}>
             <span className={style.postUserName}>{target.User.nickname}</span>
               &nbsp;
@@ -53,13 +54,13 @@ export default function Post({ noImage }: Props) {
               </Link>
             <span className={style.postDate}>{dayjs(target.createdAt).fromNow(true)}</span>
             </div>
-          <div>{target.content}</div>
-          <div>
+            <div>{target.content}</div>
+            <div>
             {/* <PostImages post={target} /> */}
             </div>
-          <ActionButtons/>
+            <ActionButtons/>
+            </div>
           </div>
-        </div>
-      </article>
+        </PostArticle>
   )
 }
