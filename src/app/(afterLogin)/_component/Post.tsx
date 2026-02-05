@@ -5,13 +5,17 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 import 'dayjs/locale/ko';
 import ActionButtons from './ActionButtons';
 import PostArticle from './PostArticle';
+import { faker } from '@faker-js/faker';
+import PostImages from './PostImages';
 
 dayjs.locale('ko');
 dayjs.extend(relativeTime)
 
+
 type Props = {
   noImage?: boolean
 }
+
 export default function Post({ noImage }: Props) {
   const target = {
     postId: 1,
@@ -22,16 +26,16 @@ export default function Post({ noImage }: Props) {
     },
     content: '테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다.',
     createdAt: new Date(),
-    Images: [] as string[],
+    Images: [] as any,
   }
-//   if (Math.random() > 0.5 && !noImage) {
-//     target.Images.push(
-//       {imageId: 1, link: faker.image.urlLoremFlickr()},
-//       {imageId: 2, link: faker.image.urlLoremFlickr()},
-//       {imageId: 3, link: faker.image.urlLoremFlickr()},
-//       {imageId: 4, link: faker.image.urlLoremFlickr()},
-//     )
-//   }
+  if (Math.random() > 0.5 && !noImage) {
+    target.Images.push(
+      {imageId: 1, link: faker.image.urlPicsumPhotos()},
+      {imageId: 2, link: faker.image.urlPicsumPhotos()},
+      {imageId: 3, link: faker.image.urlPicsumPhotos()},
+      {imageId: 4, link: faker.image.urlPicsumPhotos()},
+    )
+  }
 
   return (
   <PostArticle post={target}>
@@ -56,7 +60,7 @@ export default function Post({ noImage }: Props) {
             </div>
             <div>{target.content}</div>
             <div>
-            {/* <PostImages post={target} /> */}
+            <PostImages post={target} />
             </div>
             <ActionButtons/>
             </div>
