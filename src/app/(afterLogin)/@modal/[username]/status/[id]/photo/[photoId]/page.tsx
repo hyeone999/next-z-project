@@ -1,7 +1,7 @@
 import Post from "@/src/app/(afterLogin)/_component/Post";
 import CommentForm from "@/src/app/(afterLogin)/[username]/status/[id]/_component/CommentForm";
 import ActionButtons from "@/src/app/(afterLogin)/_component/ActionButtons";
-import style from './photoModal.module.css';
+import style from "@/src/app/(afterLogin)/@modal/[username]/status/[id]/photoModal.module.css"
 import PhotoModalCloseButton
   from "@/src/app/(afterLogin)/@modal/[username]/status/[id]/photo/[photoId]/_component/PhotoModalCloseButton";
 import {faker} from "@faker-js/faker";

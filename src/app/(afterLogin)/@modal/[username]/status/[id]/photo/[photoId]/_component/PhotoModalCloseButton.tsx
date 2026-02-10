@@ -1,6 +1,6 @@
 "use client"
 
-import style from "../photoModal.module.css";
+import style from "@/src/app/(afterLogin)/@modal/[username]/status/[id]/photoModal.module.css"
 import {useRouter} from "next/navigation";
 
 export default function PhotoModalCloseButton() {
