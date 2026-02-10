@@ -1,3 +1,18 @@
-export default function MessagesPage() {
-  return <div>Messages</div>
+import Room from './component/Room';
+import style from './message.module.css';
+
+export default function Home() {
+  return (
+    <main className={style.main}>
+      <div className={style.header}>
+        <h3>쪽지</h3>
+      </div>
+      <Room/>
+      <Room/>
+      <Room/>
+      <Room/>
+      <Room/>
+      <Room/>
+    </main>
+  )
 }
