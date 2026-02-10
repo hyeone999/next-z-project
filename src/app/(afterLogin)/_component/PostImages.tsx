@@ -1,5 +1,5 @@
 import Link from "next/link";
-import style from "./post.module.css";
+import style from "@/src/app/(afterLogin)/_component/post.module.css";
 import cx from 'classnames';
 
 type Props = {
