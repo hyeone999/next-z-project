@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import style from "@/src/app/(afterLogin)/_component/post.module.css";
 import cx from 'classnames';
@@ -12,6 +13,7 @@ type Props = {
       image: string,
     },
     createdAt: Date,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     Images: any[],
   }
 }
